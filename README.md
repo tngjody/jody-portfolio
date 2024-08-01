@@ -6,7 +6,7 @@ Welcome to my portfolio!
 
 Hello! I’m Jody, a passionate software developer with a focus on data engineering and full-stack development. I love exploring new technologies and building innovative solutions. I have experience working on various projects, including data analytics, product management, and full-stack web development. My goal is to continue growing as a developer and contribute to meaningful projects.
 
-Feel free to connect with me on [GitHub](https://github.com/tngjody) or [LinkedIn](https://www.linkedin.com/in/jody-tng).
+Feel free to connect with me on [GitHub](https://github.com/tngjody) or [LinkedIn](https://www.linkedin.com/in/jodytng/).
 
 ## Technologies Used 🛠️
 
