@@ -2,8 +2,8 @@ import React from 'react';
 
 const HomePage = () => {
   return (
-    <div className="container mx-auto p-4">
-      <main className="flex flex-col space-y-8">
+    <div className="container mx-auto p-2">
+      <main className="flex flex-col space-y-2">
         <section>
           <h2 className="text-3xl font-bold mb-4">About Me</h2>
           <p className="text-lg mb-4">
