@@ -2,14 +2,6 @@
 
 Welcome to my portfolio!
 
-## Table of Contents 📚
-
-- [About Me](#about-me)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-
 ## About Me 👋
 
 Hello! I’m Jody, a passionate software developer with a focus on data engineering and full-stack development. I love exploring new technologies and building innovative solutions. I have experience working on various projects, including data analytics, product management, and full-stack web development. My goal is to continue growing as a developer and contribute to meaningful projects.
