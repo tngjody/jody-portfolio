@@ -8,12 +8,7 @@ import 'highlight.js/styles/github.css';
 
 import React, { useEffect, useRef } from 'react';
 
-type TableData = {
-  headers: string[];
-  rows: (string | number)[][];
-};
-
-function Table({ data }: { data: TableData }) {
+function Table({ data }) {
   const headers = data.headers.map((header, index) => (
     <th key={index}>{header}</th>
   ));
@@ -35,7 +30,7 @@ function Table({ data }: { data: TableData }) {
   );
 }
 
-function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
+function CustomLink(props) {
   const { href, children, ...rest } = props;
 
   if (href?.startsWith('/')) {
@@ -57,14 +52,14 @@ function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   );
 }
 
-function RoundedImage(props: React.ComponentProps<typeof Image>) {
+function RoundedImage(props) {
   const { alt, ...rest } = props;
 
   return <Image alt={alt} className="rounded-lg" {...rest} />;
 }
 
-function Code({ children, ...props }: { children: string }) {
-  const codeRef = useRef<HTMLElement | null>(null);
+function Code({ children, ...props }) {
+  const codeRef = useRef(null);
 
   useEffect(() => {
     if (codeRef.current) {
@@ -79,7 +74,7 @@ function Code({ children, ...props }: { children: string }) {
   );
 }
 
-function slugify(str: string) {
+function slugify(str) {
   return str
     .toString()
     .toLowerCase()
@@ -90,9 +85,9 @@ function slugify(str: string) {
     .replace(/\-\-+/g, '-') // Replace multiple - with single -
 }
 
-function createHeading(level: number) {
-  const Heading = ({ children }: { children: React.ReactNode }) => {
-    const slug = slugify(children as string);
+function createHeading(level) {
+  const Heading = ({ children }) => {
+    const slug = slugify(children);
     return React.createElement(
       `h${level}`,
       { id: slug },
@@ -125,7 +120,7 @@ const components = {
   Table,
 };
 
-export function CustomMDX(props: any) {
+export function CustomMDX(props) {
   return (
     <MDXRemote
       {...props}

@@ -21,6 +21,6 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/about/page.js", "app/components/navbar.js", "app/components/footer.js", "app/og/route.js", "app/projects/page.js", "app/layout.js", "app/page.js", "app/components/mdx.js", "app/experience/page.js"],
   "exclude": ["node_modules"]
 }

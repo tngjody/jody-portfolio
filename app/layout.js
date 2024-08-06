@@ -1,15 +1,14 @@
 import './global.css';
-import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
-import { Navbar } from './components/nav';
+import { Navbar } from './components/navbar';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import Footer from './components/footer';
+import { ThemeProvider } from './og/theme'; 
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
-export const metadata: Metadata = {
+const metadata = {
   metadataBase: new URL(baseUrl),
   title: {
     default: 'Jody Tng',
@@ -37,13 +36,9 @@ export const metadata: Metadata = {
   },
 };
 
-const cx = (...classes: string[]) => classes.filter(Boolean).join(' ');
+const cx = (...classes) => classes.filter(Boolean).join(' ');
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
@@ -53,16 +48,17 @@ export default function RootLayout({
         GeistMono.variable
       )}
     >
-      <body className="antialiased flex flex-col min-h-screen overflow-hidden">
-        <main className="flex flex-col flex-grow px-2 md:px-2">
-          <Navbar />
-          <div className="flex-grow flex items-center justify-center">
-            {children}
-          </div>
-          <Footer />
-          <Analytics />
-          <SpeedInsights />
-        </main>
+      <body className="antialiased flex flex-col min-h-screen overflow-auto">
+        <ThemeProvider>
+          <main className="flex flex-col flex-grow px-2 md:px-2">
+            <Navbar />
+            <div className="flex-grow flex items-center justify-center">
+              {children}
+            </div>
+            <Analytics />
+            <SpeedInsights />
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
